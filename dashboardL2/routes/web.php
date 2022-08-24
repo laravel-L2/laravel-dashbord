@@ -6,6 +6,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostesController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\PersonnelsController;
+use App\Http\Controllers\CongeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ Route::resource('personnels', PersonnelsController::class);
 
 
 Route::resource('postes', PostesController::class);
+
+
+Route::resource('conge', CongeController::class);
 
 
 Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
