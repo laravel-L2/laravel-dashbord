@@ -42,7 +42,3 @@ Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
 Route::get('/dash', function () {
     return view('dashboard');
 });
-
-
-
-
