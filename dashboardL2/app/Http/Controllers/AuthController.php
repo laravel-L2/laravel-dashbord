@@ -1,4 +1,7 @@
 <?php
+/* 
+    =============== CONTROLLER FOR AUTHENTIFICATION =================
+*/
 
 namespace App\Http\Controllers;
 
@@ -7,8 +10,7 @@ use App\Models\Personnel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class AuthController extends Controller
-{
+class AuthController extends Controller {
     public function inscrire(Request $request) {
         $donnees = $request->validate([
             'name' => 'required|string',
@@ -33,13 +35,11 @@ class AuthController extends Controller
             'password' => 'required|string'
         ]);
         $user = User::where('email', $donnees['email'])->first();
-
         if(!$user || !Hash::check($donnees['password'], $user->password)) {
             return response([
                 'message' => "Credentials incorrects !"
             ], 401);
         }
-
         $token = $user->createToken('laravel-ddsjrl')->plainTextToken;
 
         return response([

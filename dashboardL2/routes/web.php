@@ -18,9 +18,15 @@ use App\Http\Controllers\PersonnelsController;
 |
 */
 
+// ====================== ROUTAGE AUTHENTIFICATION =====================
 Route::get('/', function () {
-    return view('blank');
+    return view('auth/auth');
 });
+
+Route::get('/section-auth', function () {
+    return view('auth/section');
+});
+// =====================================================================
 
 Route::resource('clients', ClientsController::class);
 
