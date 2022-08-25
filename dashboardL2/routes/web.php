@@ -20,7 +20,7 @@ use App\Http\Controllers\CongeController;
 */
 
 Route::get('/', function () {
-    return view('blank');
+    return view('dashboard');
 });
 
 Route::resource('clients', ClientsController::class);
@@ -40,12 +40,6 @@ Route::get('display-post', [PostsController::class, 'index'])->name('posts.index
 Route::get('create-post', [PostsController::class, 'create'])->name('posts.create');
 
 Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
-
-
-
-Route::get('/dash', function () {
-    return view('dashboard');
-});
 
 
 
