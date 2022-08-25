@@ -7,6 +7,7 @@ use App\Http\Controllers\PostesController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\PersonnelsController;
 use App\Http\Controllers\CongeController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,18 @@ use App\Http\Controllers\CongeController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+/**Route pour les vues */
+Route::get('/', [DashboardController::class, 'index']);
+
+/**Vue postes */
+Route::get('/liste-poste', [PostesController::class, 'index']);
+Route::get('/create-poste', [PostesController::class, 'create']);
+
+Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
+
+Route::get('create-post', [PostsController::class, 'create'])->name('posts.create');
+
+Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
 
 Route::resource('clients', ClientsController::class);
 
@@ -35,11 +45,6 @@ Route::resource('postes', PostesController::class);
 Route::resource('conge', CongeController::class);
 
 
-Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
-
-Route::get('create-post', [PostsController::class, 'create'])->name('posts.create');
-
-Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
 
 
 
