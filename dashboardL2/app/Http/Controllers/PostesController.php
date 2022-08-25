@@ -15,14 +15,7 @@ class PostesController extends Controller
     public function index()
     {
 
-        $postes =  Poste::find(4);
-        foreach($postes->personnels as $p) {
-            echo $p->nom .'<br>'; 
-        }
-
-
-
-        //return view('postes.index');
+        return view('postes.index');
     }
 
     /**
@@ -32,29 +25,7 @@ class PostesController extends Controller
      */
     public function create()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return view('postes.create');
     }
 
     /**
@@ -86,7 +57,7 @@ class PostesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function remove($id)
     {
         //
     }
