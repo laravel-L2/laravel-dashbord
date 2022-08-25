@@ -21,31 +21,26 @@ use App\Http\Controllers\DashboardController;
 */
 
 /**Route pour les vues */
-Route::get('/', [DashboardController::class, 'index']);
+Route::get("/", [DashboardController::class, "index"]);
 
 /**Vue postes */
-Route::get('/liste-poste', [PostesController::class, 'index']);
-Route::get('/create-poste', [PostesController::class, 'create']);
+Route::get("/liste-poste", [PostesController::class, "index"]);
+Route::get("/create-poste", [PostesController::class, "create"]);
 
-Route::get('display-post', [PostsController::class, 'index'])->name('posts.index');
+Route::get("display-post", [PostsController::class, "index"])->name(
+    "posts.index"
+);
 
-Route::get('create-post', [PostsController::class, 'create'])->name('posts.create');
+Route::get("create-post", [PostsController::class, "create"])->name(
+    "posts.create"
+);
 
-Route::post('save-post', [PostsController::class, 'save'])->name('posts.save');
+Route::post("save-post", [PostsController::class, "save"])->name("posts.save");
 
-Route::resource('clients', ClientsController::class);
+Route::resource("clients", ClientsController::class);
 
+Route::resource("personnels", PersonnelsController::class);
 
-Route::resource('personnels', PersonnelsController::class);
+Route::resource("postes", PostesController::class);
 
-
-Route::resource('postes', PostesController::class);
-
-
-Route::resource('conge', CongeController::class);
-
-
-
-
-
-
+Route::resource("conge", CongeController::class);

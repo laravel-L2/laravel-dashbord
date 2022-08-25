@@ -14,10 +14,9 @@ class ClientsController extends Controller
      */
     public function index()
     {
+        $clients = Client::orderBy("id")->paginate(4);
 
-        $clients = Client::orderBy('id')->paginate(4);
-
-        return view('clients.index', compact('clients'));
+        return view("clients.index", compact("clients"));
     }
 
     /**
@@ -27,7 +26,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        return view("clients.create");
     }
 
     /**
@@ -37,30 +36,24 @@ class ClientsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-
-        
+    {
         $request->validate([
-            'nom' =>  'required',
-            'description' =>  'required|min:5'
-             //['required', 'email']   
+            "nom" => "required",
+            "description" => "required|min:5",
+            //['required', 'email']
         ]);
 
-
-        $nom =  $request->nom;
-        $description =  $request->description;
-
+        $nom = $request->nom;
+        $description = $request->description;
 
         Client::create([
-            'nom' => $nom,
-            'description' => $description,
+            "nom" => $nom,
+            "description" => $description,
         ]);
 
+        session()->flash("success");
 
-        session()->flash('success');
-
-
-        return redirect()->route('clients.index');
+        return redirect()->route("clients.index");
     }
 
     /**
@@ -82,11 +75,9 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-
         $client = Client::find($id);
 
-
-        return view('clients.edit', compact('client'));
+        return view("clients.edit", compact("client"));
     }
 
     /**
@@ -100,14 +91,12 @@ class ClientsController extends Controller
     {
         $client = Client::find($id);
 
-        $nom =  $request->nom;
-        $description =  $request->description;
+        $nom = $request->nom;
+        $description = $request->description;
 
-        $client->update(['nom' => $nom, 'description' => $description]);
+        $client->update(["nom" => $nom, "description" => $description]);
 
-        return redirect()->route('clients.index');
-
-
+        return redirect()->route("clients.index");
     }
 
     /**
@@ -119,6 +108,6 @@ class ClientsController extends Controller
     public function destroy($id)
     {
         Client::find($id)->delete();
-        return redirect()->route('clients.index');
+        return redirect()->route("clients.index");
     }
 }

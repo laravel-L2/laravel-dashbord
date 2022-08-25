@@ -10,8 +10,7 @@ class Conge extends Model
 {
     use HasFactory;
 
-
-    public function conges() 
+    public function conges()
     {
         return $this->hasMany(Conges::class);
     }
