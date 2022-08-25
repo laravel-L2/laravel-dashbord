@@ -14,46 +14,137 @@
             <table class="table mg-b-0">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Salary</th>
+                    <th>N°</th>
+                    <th>Nom du poste</th>
+                    <th>Domaine</th>
+                    <th>Nombre d'employée</th>
+                    <th>Date d'ajout</th>
+                    <th class="text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>$320,800</td>
+                    <td>Developpeur</td>
+                    <td>Informatique</td>
+                    <td class="text-center">10</td>
+                    <td class="">24 Août 2022</td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-icon">
+                            <div>
+                                <i class="icon ion-edit"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-icon" data-toggle="modal" data-target="#delete">
+                            <div>
+                                <i class="=icon ion-trash-a"></i>
+                            </div>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>$170,750</td>
+                    <td>Comptabilité</td>
+                    <td>Gestion & Finance</td>
+                    <td class="text-center">3</td>
+                    <td class="">24 Août 2022</td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-icon ">
+                            <div>
+                                <i class="icon ion-edit"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-icon ">
+                            <div>
+                                <i class="=icon ion-trash-a"></i>
+                            </div>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>$86,000</td>
+                    <td>Administration système & réseau</td>
+                    <td>Informatique</td>
+                    <td class="text-center">5</td>
+                    <td class="">24 Août 2022</td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-icon ">
+                            <div>
+                                <i class="icon ion-edit"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-icon ">
+                            <div>
+                                <i class="=icon ion-trash-a"></i>
+                            </div>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>$433,060</td>
+                    <td>Ressources Humaine</td>
+                    <td>Administration</td>
+                    <td class="text-center">6</td>
+                    <td class="">24 Août 2022</td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-icon ">
+                            <div>
+                                <i class="icon ion-edit"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-icon ">
+                            <div>
+                                <i class="=icon ion-trash-a"></i>
+                            </div>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>$162,700</td>
+                    <td>Call center</td>
+                    <td>Call center</td>
+                    <td class="text-center">2</td>
+                    <td class="">24 Août 2022</td>
+                    <td>
+                        <a href="#" class="btn btn-info btn-icon ">
+                            <div>
+                                <i class="icon ion-edit"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="btn btn-danger btn-icon ">
+                            <div>
+                                <i class="=icon ion-trash-a"></i>
+                            </div>
+                        </a>
+                    </td>
                 </tr>
             </tbody>
             </table>
         </div>
     </div>
 </div>
+
+
+<!-- MODAL DELETE -->
+<div id="delete" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content tx-size-sm">
+        <div class="modal-body tx-center pd-y-20 pd-x-20">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            <i class="icon ion-trash-b tx-100 tx-danger lh-1 mg-t-20 d-inline-block"></i>
+            <h4 class="tx-danger  tx-semibold mg-b-20">Confirmation de suppression</h4>
+            <p class="mg-b-20 mg-x-20">Vous voulez vraiment supprimer ce poste ?</p>
+            <button type="button" class="btn btn-danger tx-11 tx-uppercase pd-y-12 pd-x-25 tx-mont tx-medium mg-b-20" data-dismiss="modal" aria-label="Close">
+                Confirmer suppression
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+<!--FIN MODAL DELETE -->
+
+<!--MODAL EDIT -->
+<!--FIN MODAL EDIT -->
 @endsection
