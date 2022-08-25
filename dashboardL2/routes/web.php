@@ -21,11 +21,11 @@ use App\Http\Controllers\DashboardController;
 */
 
 /**Route pour les vues */
-Route::get("/", [DashboardController::class, "index"]);
+Route::get("/", [DashboardController::class, "index"])->name('dashboard');
 
 /**Vue postes */
-Route::get("/liste-poste", [PostesController::class, "index"]);
-Route::get("/create-poste", [PostesController::class, "create"]);
+Route::get("/liste-poste", [PostesController::class, "index"])->name('liste-poste');
+Route::get("/create-poste", [PostesController::class, "create"])->name('create-poste');
 
 Route::get("display-post", [PostsController::class, "index"])->name(
     "posts.index"
