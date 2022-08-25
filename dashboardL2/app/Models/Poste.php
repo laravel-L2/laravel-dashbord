@@ -10,8 +10,7 @@ class Poste extends Model
 {
     use HasFactory;
 
-
-    public function personnels() 
+    public function personnels()
     {
         return $this->hasMany(Personnel::class);
     }

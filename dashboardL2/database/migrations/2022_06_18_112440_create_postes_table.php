@@ -13,9 +13,9 @@ class CreatePostesTable extends Migration
      */
     public function up()
     {
-        Schema::create('postes', function (Blueprint $table) {
+        Schema::create("postes", function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string("nom");
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreatePostesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('postes');
+        Schema::dropIfExists("postes");
     }
 }

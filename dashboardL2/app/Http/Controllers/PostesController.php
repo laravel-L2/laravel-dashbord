@@ -14,8 +14,7 @@ class PostesController extends Controller
      */
     public function index()
     {
-
-        return view('postes.index');
+        return view("postes.index");
     }
 
     /**
@@ -25,7 +24,7 @@ class PostesController extends Controller
      */
     public function create()
     {
-        return view('postes.create');
+        return view("postes.create");
     }
 
     /**

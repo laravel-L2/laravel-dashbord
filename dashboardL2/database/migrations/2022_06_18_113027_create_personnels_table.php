@@ -13,10 +13,10 @@ class CreatePersonnelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('personnels', function (Blueprint $table) {
+        Schema::create("personnels", function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->foreignId('poste_id')->constrained();
+            $table->string("nom");
+            $table->foreignId("poste_id")->constrained();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePersonnelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personnels');
+        Schema::dropIfExists("personnels");
     }
 }

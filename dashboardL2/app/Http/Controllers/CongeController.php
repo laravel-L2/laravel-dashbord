@@ -14,11 +14,9 @@ class CongeController extends Controller
      */
     public function index()
     {
-
         $conge = Conge::all();
 
-
-        return view('conge.index', compact('conge'));
+        return view("conge.index", compact("conge"));
     }
 
     /**

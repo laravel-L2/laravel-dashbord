@@ -45,6 +45,10 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "fix-cs": [
+            "prettier resources/**/* --write",
+            "php-cs-fixer fix"
         ]
     },
     "extra": {
