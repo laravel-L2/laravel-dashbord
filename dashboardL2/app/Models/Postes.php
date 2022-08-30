@@ -2,16 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Personnel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Poste extends Model
+class Postes extends Model
 {
     use HasFactory;
-
-    public function personnels()
-    {
-        return $this->hasMany(Personnel::class);
-    }
+    protected $table = 'postes';
+    protected $fillable = ['titre','department','add_poste_date', 'description'];
 }

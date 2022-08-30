@@ -10,7 +10,7 @@ class Personnel extends Model
 {
     use HasFactory;
 
-    public function poste()
+    public function personnel()
     {
         return $this->belongsTo(Poste::class);
     }
