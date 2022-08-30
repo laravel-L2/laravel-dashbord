@@ -13,9 +13,12 @@ class CreatePostesTable extends Migration
      */
     public function up()
     {
-        Schema::create("postes", function (Blueprint $table) {
+        Schema::create('postes', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
+            $table->string('titre');
+            $table->string('department');
+            $table->date('add_poste_date');
+            $table->date('description');
             $table->timestamps();
         });
     }
