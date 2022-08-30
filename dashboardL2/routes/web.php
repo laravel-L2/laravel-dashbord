@@ -18,10 +18,13 @@ use App\Http\Controllers\CongeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//retrive data
 
 Route::get('/', function () {
     return view('blank');
 });
+
+
 
 Route::resource('clients', ClientsController::class);
 

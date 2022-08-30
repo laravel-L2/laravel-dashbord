@@ -15,10 +15,11 @@ class CongeController extends Controller
     public function index()
     {
 
-        $conge = Conge::all();
+        $conges = Conge::all();
+        //$conges = Conge::select('SELECT * FROM conges');
+        return view('conge.index',['conges'=>$conges]);
 
-
-        return view('conge.index', compact('conge'));
+      // return view('conge.index', compact('conges'));
     }
 
     /**

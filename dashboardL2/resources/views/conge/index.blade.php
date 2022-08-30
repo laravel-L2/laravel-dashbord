@@ -89,6 +89,7 @@
               </tr>
             </thead>
             <tbody>
+            @foreach ($conges as $conge)
             <tr>
                 <td class="valign-middle">
                   <label class="ckbox mg-b-0">
@@ -97,10 +98,10 @@
                 </td>
                 <td>
                   <i class="icon ion-ios-person-outline tx-24 tx-warning lh-0 valign-middle"></i>
-                  <span class="pd-l-5">DOMINICK Randriamantena Grégoire</span>
+                  <span class="pd-l-5">{{$conge->nom_employe}}</span>
                 </td>
-                <td class="hidden-xs-down">22/08/22</td>
-                <td class="hidden-xs-down">Maladie</td>
+                <td class="hidden-xs-down">{{$conge->date_demande}}</td>
+                <td class="hidden-xs-down">{{$conge->motif}}</td>
                 <td class="dropdown">
                   <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"><i class="icon ion-more"></i></a>
                   <div class="dropdown-menu dropdown-menu-right pd-10">
@@ -111,29 +112,8 @@
                   </div><!-- dropdown-menu -->
                 </td>
               </tr>
+              @endforeach
 
-              <tr>
-                <td class="valign-middle">
-                  <label class="ckbox mg-b-0">
-                    <input type="checkbox"><span></span>
-                  </label>
-                </td>
-                <td>
-                  <i class="icon ion-ios-person-outline tx-24 tx-warning lh-0 valign-middle"></i>
-                  <span class="pd-l-5">DOMINICK Randriamantena Grégoire</span>
-                </td>
-                <td class="hidden-xs-down">22/05/21</td>
-                <td class="hidden-xs-down">Familiale</td>
-                <td class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"><i class="icon ion-more"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right pd-10">
-                    <nav class="nav nav-style-1 flex-column">
-                    <a href="#" class="nav-link">Vamider</a>
-                      <a href="#" class="nav-link">Refuser</a>
-                    </nav>
-                  </div><!-- dropdown-menu -->
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
