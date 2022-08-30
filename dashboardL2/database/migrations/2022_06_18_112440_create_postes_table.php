@@ -18,7 +18,7 @@ class CreatePostesTable extends Migration
             $table->string('titre');
             $table->string('department');
             $table->date('add_poste_date');
-            $table->date('description');
+            $table->string('description');
             $table->timestamps();
         });
     }

@@ -24,8 +24,8 @@ use App\Http\Controllers\DashboardController;
 Route::get("/", [DashboardController::class, "index"])->name('dashboard');
 
 /**Vue postes */
-Route::get("/liste-poste", [PostesController::class, "index"])->name('liste-poste');
-Route::get("/create-poste", [PostesController::class, "create"])->name('create-poste');
+Route::get("/liste-poste", [PostesController::class, "indexView"])->name('liste-poste');
+Route::get("/create-poste", [PostesController::class, "createView"])->name('create-poste');
 
 Route::get("display-post", [PostsController::class, "index"])->name(
     "posts.index"

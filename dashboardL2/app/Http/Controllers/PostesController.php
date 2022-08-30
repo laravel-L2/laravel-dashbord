@@ -8,15 +8,30 @@ use Illuminate\Http\Request;
 class PostesController extends Controller
 {
     /**
+     * View for listing poste
+     */
+    public function indexView(){
+        return view("postes.index");
+    }
+
+    /**
+     * View for create
+     */
+    public function createView(){
+        return view("postes.create");
+    }
+
+
+    /**Controllers for API */
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $postes = Postes::all();
-        response()->json($postes);
-        return view("postes.index");
+        $postesResponse = Postes::all();
+        return response()->json($postesResponse);
     }
 
     /**
@@ -24,7 +39,7 @@ class PostesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $poste = new Postes;
         $poste->titre = $request->titre;
@@ -33,10 +48,8 @@ class PostesController extends Controller
         $poste->description = $request->description;
         $poste->save();
         return response()->json([
-            "message" => "Poste ajouté."
+            "message" => "Poste ajoute."
         ], 201);
-
-        return view("postes.create");
     }
 
     /**
@@ -45,7 +58,7 @@ class PostesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function update(Request $request, $id)
     {
         if (Postes::where('id', $id)->exists()) {
             $poste = Postes::find($id);
@@ -55,7 +68,7 @@ class PostesController extends Controller
             $poste->description = is_null($request->description) ? $poste->description : $request->description;
             $poste->save();
             return response()->json([
-                "message" => "Poste mis à jour."
+                "message" => "Poste mis a jour."
             ], 200);
         }else{
             return response()->json([
@@ -70,14 +83,14 @@ class PostesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function remove($id)
+    public function destroy($id)
     {
         if(Postes::where('id', $id)->exists()) {
             $poste = Postes::find($id);
             $poste->delete();
 
             return response()->json([
-              "message" => "Poste supprimé"
+              "message" => "Poste supprime"
             ], 200);
         } else {
             return response()->json([
