@@ -10,7 +10,7 @@
         <h6 class="br-section-label">Liste de tous les postes</h6>
         <p class="br-section-text">Vous pouvez visualiser ici tous les postes présents dans l'entreprise</p>
 
-        <div class="bd bd-gray-300 rounded table-responsive">
+        <!--<div class="bd bd-gray-300 rounded table-responsive">
             <table class="table mg-b-0">
             <thead>
                 <tr>
@@ -120,7 +120,7 @@
                 </tr>
             </tbody>
             </table>
-        </div>
+        </div>-->
     </div>
 </div>
 
@@ -160,18 +160,18 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input class="form-control mt-2 @error('titre') is-invalid @enderror" name="titre" placeholder="Entrez le nouveau titre du poste" type="text">
+                                <input class="form-control mt-2 " name="titre" placeholder="Entrez le nouveau titre du poste" type="text">
                             </div>
                             <div class="form-group">
-                                <input class="form-control mt-2 @error('date') is-invalid @enderror" name="date" placeholder="Date d'ajout du poste" type="text">
+                                <input class="form-control mt-2 " name="date" placeholder="Date d'ajout du poste" type="text">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input class="form-control mt-2 @error('departement') is-invalid @enderror" name="departement" placeholder="Entrer le nouveau département" type="text">
+                                <input class="form-control mt-2 " name="departement" placeholder="Entrer le nouveau département" type="text">
                             </div>
                             <div class="form-group">
-                                <input class="form-control mt-2 @error('description') is-invalid @enderror" name="description" placeholder="Entrer le nouveau description" type="text">
+                                <input class="form-control mt-2 " name="description" placeholder="Entrer le nouveau description" type="text">
                             </div>
                         </div>
                     </div>
