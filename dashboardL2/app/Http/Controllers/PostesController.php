@@ -48,7 +48,7 @@ class PostesController extends Controller
         $poste->description = $request->description;
         $poste->save();
         return response()->json([
-            "message" => "Poste ajouté."
+            "message" => "Poste ajoute."
         ], 201);
     }
 
@@ -68,7 +68,7 @@ class PostesController extends Controller
             $poste->description = is_null($request->description) ? $poste->description : $request->description;
             $poste->save();
             return response()->json([
-                "message" => "Poste mis à jour."
+                "message" => "Poste mis a jour."
             ], 200);
         }else{
             return response()->json([
@@ -90,7 +90,7 @@ class PostesController extends Controller
             $poste->delete();
 
             return response()->json([
-              "message" => "Poste supprimé"
+              "message" => "Poste supprime"
             ], 200);
         } else {
             return response()->json([
