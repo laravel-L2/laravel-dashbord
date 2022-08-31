@@ -16,7 +16,8 @@ class PostesController extends Controller
     public function index()
     {
         $postes = Postes::all();
-        return view("postes.index", compact('postes'));
+        $numero = 0;
+        return view("postes.index", compact('postes', 'numero'));
     }
 
     /**
