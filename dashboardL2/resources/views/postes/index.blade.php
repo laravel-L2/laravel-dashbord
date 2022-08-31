@@ -9,117 +9,43 @@
     <div class="br-section-wrapper">
         <h6 class="br-section-label">Liste de tous les postes</h6>
         <p class="br-section-text">Vous pouvez visualiser ici tous les postes présents dans l'entreprise</p>
-        <div class="bd bd-gray-300 rounded table-responsive">
-            <table class="table mg-b-0">
-            <thead>
-                <tr>
-                    <th>N°</th>
-                    <th>Nom du poste</th>
-                    <th>Domaine</th>
-                    <th>Nombre d'employée</th>
-                    <th>Date d'ajout</th>
-                    <th class="text-center">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Developpeur</td>
-                    <td>Informatique</td>
-                    <td class="text-center">10</td>
-                    <td class="">24 Août 2022</td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-icon" data-toggle="modal" data-target="#edit">
-                            <div>
-                                <i class="icon ion-edit"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-icon" data-toggle="modal" data-target="#delete">
-                            <div>
-                                <i class="=icon ion-trash-a"></i>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Comptabilité</td>
-                    <td>Gestion & Finance</td>
-                    <td class="text-center">3</td>
-                    <td class="">24 Août 2022</td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-icon" data-toggle="modal" data-target="#edit">
-                            <div>
-                                <i class="icon ion-edit"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-icon" data-toggle="modal" data-target="#delete">
-                            <div>
-                                <i class="=icon ion-trash-a"></i>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Administration système & réseau</td>
-                    <td>Informatique</td>
-                    <td class="text-center">5</td>
-                    <td class="">24 Août 2022</td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-icon" data-toggle="modal" data-target="#edit">
-                            <div>
-                                <i class="icon ion-edit"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-icon" data-toggle="modal" data-target="#delete">
-                            <div>
-                                <i class="=icon ion-trash-a"></i>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Ressources Humaine</td>
-                    <td>Administration</td>
-                    <td class="text-center">6</td>
-                    <td class="">24 Août 2022</td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-icon" data-toggle="modal" data-target="#edit">
-                            <div>
-                                <i class="icon ion-edit"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-icon" data-toggle="modal" data-target="#delete">
-                            <div>
-                                <i class="=icon ion-trash-a"></i>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Call center</td>
-                    <td>Call center</td>
-                    <td class="text-center">2</td>
-                    <td class="">24 Août 2022</td>
-                    <td>
-                        <a href="#" class="btn btn-info btn-icon" data-toggle="modal" data-target="#edit">
-                            <div>
-                                <i class="icon ion-edit"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-icon" data-toggle="modal" data-target="#delete">
-                            <div>
-                                <i class="=icon ion-trash-a"></i>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
+            <div class="bd bd-gray-300 rounded table-responsive">
+                <table class="table mg-b-0">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Nom du poste</th>
+                        <th style="width:70px;">Domaine</th>
+                        <th>Date d'ajout</th>
+                        <th style="width:300px;">A propos du poste</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach($postes as $poste)
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{ $poste->titre}} </td>
+                        <td style="width:70px;">{{$poste->department}}</td>
+                        <td class="">{{$poste->add_poste_date}}</td>
+                        <td style="width:300px;">{{$poste->description}}</td>
+                        <td>
+                            <a href="#" class="btn btn-info btn-icon" data-toggle="modal" data-target="#edit">
+                                <div>
+                                    <i class="icon ion-edit"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="btn btn-danger btn-icon" data-toggle="modal" data-target="#delete">
+                                <div>
+                                    <i class="=icon ion-trash-a"></i>
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+                </table>
+            </div>
     </div>
 </div>
 
