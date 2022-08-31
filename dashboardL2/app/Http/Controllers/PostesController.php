@@ -7,21 +7,6 @@ use Illuminate\Http\Request;
 
 class PostesController extends Controller
 {
-    /**
-     * View for listing poste
-     */
-    public function indexView(){
-        return view("postes.index");
-    }
-
-    /**
-     * View for create
-     */
-    public function createView(){
-        return view("postes.create");
-    }
-
-
     /**Controllers for API */
     /**
      * Display a listing of the resource.
@@ -30,8 +15,15 @@ class PostesController extends Controller
      */
     public function index()
     {
-        $postesResponse = Postes::all();
-        return response()->json($postesResponse);
+        $postes = Postes::all();
+        return view("postes.index", compact('postes'));
+    }
+
+    /**
+     * View for create
+     */
+    public function createView(){
+        return view("postes.create");
     }
 
     /**
@@ -68,7 +60,7 @@ class PostesController extends Controller
             $poste->description = is_null($request->description) ? $poste->description : $request->description;
             $poste->save();
             return response()->json([
-                "message" => "Poste mis a jour."
+                "message" => "Poste modifie."
             ], 200);
         }else{
             return response()->json([
