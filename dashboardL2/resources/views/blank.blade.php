@@ -303,8 +303,10 @@
     <script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/jquery.peity.min.js') }}"></script>
-
     <script src="{{ asset('js/bracket.js') }}"></script>
+    
+    <!--script pour l'appel API postes-->
+    <script src="{{ asset('js/ajax.js') }}"></script>
   </body>
 
 </html>
