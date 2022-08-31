@@ -9,8 +9,7 @@
     <div class="br-section-wrapper">
         <h6 class="br-section-label">Liste de tous les postes</h6>
         <p class="br-section-text">Vous pouvez visualiser ici tous les postes présents dans l'entreprise</p>
-
-        <!--<div class="bd bd-gray-300 rounded table-responsive">
+        <div class="bd bd-gray-300 rounded table-responsive">
             <table class="table mg-b-0">
             <thead>
                 <tr>
@@ -120,7 +119,7 @@
                 </tr>
             </tbody>
             </table>
-        </div>-->
+        </div>
     </div>
 </div>
 
