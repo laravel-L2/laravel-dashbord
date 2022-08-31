@@ -106,7 +106,7 @@
                   <a href="#" data-toggle="dropdown" class="btn pd-y-3 tx-gray-500 hover-info"><i class="icon ion-more"></i></a>
                   <div class="dropdown-menu dropdown-menu-right pd-10">
                     <nav class="nav nav-style-1 flex-column">
-                      <a href="#" class="nav-link">Vamider</a>
+                      <a href="#" class="nav-link">Valider</a>
                       <a href="#" class="nav-link">Refuser</a>
                     </nav>
                   </div><!-- dropdown-menu -->
