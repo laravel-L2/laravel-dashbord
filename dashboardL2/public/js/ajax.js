@@ -78,4 +78,54 @@ $(document).ready(function ($) {
             },
         });
     });
+
+    /* Tâches */
+    $(".deleteOneTask").on("click", function () {
+        var task = $(this).data("task");
+        let { id } = task;
+        if (
+            confirm(`Voulez vous vraiment supprimer "${task.titre}" ?`) == true
+        ) {
+            // ajax
+            $.ajax({
+                type: "DELETE",
+                url: `http://localhost:8000/api/tasks/${id}`,
+                success: function (res) {
+                    window.location.reload();
+                },
+            });
+        }
+    });
+    //fonction pour passer les données dans le modal
+    $(".editOneTask").on("click", function () {
+        var task = $(this).data("taskedit");
+        let { id, titre, add_tache_date, department, description } = task;
+        $(".modal-body #idTask").val(id);
+        $(".modal-body #titreTask").val(titre);
+        $(".modal-body #dateTask").val(add_tache_date);
+        $(".modal-body #departmentTask").val(department);
+        $(".modal-body #descriptionTask").val(description);
+    });
+
+    //submit formulaires
+    $("#submit_edit_task").on("click", function (event) {
+        let titre = $("#titreTask").val();
+        let date_ajout = $("#dateTask").val();
+        let department = $("#departmentTask").val();
+        let description = $("#descriptionTask").val();
+        let idTask = $("#idTask").val();
+        $.ajax({
+            type: "PATCH",
+            url: `http://localhost:8000/api/tasks/${idTask}`,
+            data: {
+                titre: titre,
+                department: department,
+                add_tache_date: date_ajout,
+                description: description,
+            },
+            success: function (data) {
+                window.location.reload();
+            },
+        });
+    });
 });
