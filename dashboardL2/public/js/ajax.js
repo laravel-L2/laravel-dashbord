@@ -6,6 +6,29 @@ $(document).ready(function ($) {
         },
     });
 
+    //create fonction postes
+    $(".createPoste").on("click", function () {
+        let titre = $("#titre-create").val();
+        let date_ajout = $("#date-create").val();
+        let department = $("#department-create").val();
+        let description = $("#description-create").val();
+        //ajax
+        $.ajax({
+            type: "POST",
+            url: `http://localhost:8000/api/postes`,
+            data: {
+                titre: titre,
+                department: department,
+                add_poste_date: date_ajout,
+                description: description,
+            },
+            success: function (data) {
+                window.location.reload();
+            },
+        });
+    });
+
+    //delete fonction postes
     $(".deleteOnePoste").on("click", function () {
         var poste = $(this).data("poste");
         let { id } = poste;
@@ -22,6 +45,7 @@ $(document).ready(function ($) {
             });
         }
     });
+
     //fonction pour passer les données dans le modal
     $(".editOnePoste").on("click", function () {
         var poste = $(this).data("posteedit");
