@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\Post;
+use App\Models\Conges;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Comment extends Model
+class Conge extends Model
 {
     use HasFactory;
 
-    public function post()
+    public function conges()
     {
-        return $this->belongsTo(Post::class);
+        return $this->hasMany(Conges::class);
     }
 }

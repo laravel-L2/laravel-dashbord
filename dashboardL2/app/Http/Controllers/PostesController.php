@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Poste;
+use App\Models\Postes;
 use Illuminate\Http\Request;
 
 class PostesController extends Controller
 {
+    /**Controllers for API */
     /**
      * Display a listing of the resource.
      *
@@ -14,15 +15,16 @@ class PostesController extends Controller
      */
     public function index()
     {
+        $postes = Postes::all();
+        $numero = 0;
+        return view("postes.index", compact('postes', 'numero'));
+    }
 
-        $postes =  Poste::find(4);
-        foreach($postes->personnels as $p) {
-            echo $p->nom .'<br>'; 
-        }
-
-
-
-        //return view('postes.index');
+    /**
+     * View for create
+     */
+    public function createView(){
+        return view("postes.create");
     }
 
     /**
@@ -30,31 +32,17 @@ class PostesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $poste = new Postes;
+        $poste->titre = $request->titre;
+        $poste->department = $request->department;
+        $poste->add_poste_date = $request->add_poste_date;
+        $poste->description = $request->description;
+        $poste->save();
+        return response()->json([
+            "message" => "Poste ajoute."
+        ], 201);
     }
 
     /**
@@ -63,21 +51,23 @@ class PostesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        if (Postes::where('id', $id)->exists()) {
+            $poste = Postes::find($id);
+            $poste->titre = is_null($request->titre) ? $poste->titre : $request->titre;
+            $poste->department = is_null($request->department) ? $poste->department : $request->department;
+            $poste->add_poste_date = is_null($request->add_poste_date) ? $poste->add_poste_date : $request->add_poste_date;
+            $poste->description = is_null($request->description) ? $poste->description : $request->description;
+            $poste->save();
+            return response()->json([
+                "message" => "Poste modifie."
+            ], 200);
+        }else{
+            return response()->json([
+                "message" => "Poste Not Found."
+            ], 404);
+        }
     }
 
     /**
@@ -88,6 +78,17 @@ class PostesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Postes::where('id', $id)->exists()) {
+            $poste = Postes::find($id);
+            $poste->delete();
+
+            return response()->json([
+              "message" => "Poste supprime"
+            ], 200);
+        } else {
+            return response()->json([
+              "message" => "Poste not found"
+            ], 404);
+        }
     }
 }

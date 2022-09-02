@@ -15,7 +15,10 @@ class CreatePostesTable extends Migration
     {
         Schema::create('postes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('titre');
+            $table->string('department');
+            $table->date('add_poste_date');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreatePostesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('postes');
+        Schema::dropIfExists("postes");
     }
 }

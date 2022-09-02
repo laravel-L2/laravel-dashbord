@@ -14,11 +14,9 @@ class PersonnelsController extends Controller
      */
     public function index()
     {
-
         $personnels = Personnel::all();
 
-
-        return view('personnels.index', compact('personnels'));
+        return view("personnels.index", compact("personnels"));
     }
 
     /**

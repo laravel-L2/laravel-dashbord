@@ -61,8 +61,18 @@
             <span class="menu-item-label">POSTES</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Nouveau poste</a></li>
-            <li class="sub-item"><a href="card-social.html" class="sub-link">Liste poste</a></li>
+            <li class="sub-item"><a href="{{ route('create-poste') }}" class="sub-link">Nouveau poste</a></li>
+            <li class="sub-item"><a href="{{ route('liste-poste') }}" class="sub-link">Liste poste</a></li>
+          </ul>
+        </li>
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <span class="menu-item-label">TÂCHES</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{ route('tasks.index') }}" class="sub-link">Nouveau tâche</a></li>
+            <li class="sub-item"><a href="{{ route('tasks.create') }}" class="sub-link">Liste tâche</a></li>
           </ul>
         </li>
 
@@ -303,8 +313,10 @@
     <script src="{{ asset('js/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('js/jquery.peity.min.js') }}"></script>
-
     <script src="{{ asset('js/bracket.js') }}"></script>
+    
+    <!--script pour l'appel API postes-->
+    <script src="{{ asset('js/ajax.js') }}"></script>
   </body>
 
 </html>
